@@ -127,9 +127,9 @@ LeafletWidget.methods.addFlatGeoBuf = function (layerId,
                 }, {sticky: true});
               }
             }
-            lyr.on("click", mouseHandler(map.id, layerId, group, "shape_click"));
-            lyr.on("mouseover", mouseHandler(map.id, layerId, group, "shape_mouseover"));
-            lyr.on("mouseout", mouseHandler(map.id, layerId, group, "shape_mouseout"));
+            // lyr.on("click", mouseHandler(map.id, layerId, group, "shape_click"));
+            // lyr.on("mouseover", mouseHandler(map.id, layerId, group, "shape_mouseover"));
+            // lyr.on("mouseout", mouseHandler(map.id, layerId, group, "shape_mouseout"));
             map.layerManager.addLayer(lyr, null, null, group);
             it.next().then(handleResult);
           }
@@ -394,9 +394,9 @@ LeafletWidget.methods.addFlatGeoBufFiltered = function (layerId,
               }
             }
 
-         lyr.on("click", mouseHandler(map.id, layerId, group, "shape_click"));
-         lyr.on("mouseover", mouseHandler(map.id, layerId, group, "shape_mouseover"));
-         lyr.on("mouseout", mouseHandler(map.id, layerId, group, "shape_mouseout"));
+         // lyr.on("click", mouseHandler(map.id, layerId, group, "shape_click"));
+         // lyr.on("mouseover", mouseHandler(map.id, layerId, group, "shape_mouseover"));
+         // lyr.on("mouseout", mouseHandler(map.id, layerId, group, "shape_mouseout"));
          lyr.addTo(nextResults[layerId]);
       }
     }
