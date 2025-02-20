@@ -416,7 +416,7 @@ addFgb = function(map,
     }
     path_layer = tempfile()
     dir.create(path_layer)
-    path_layer = paste0(path_layer, "/", group, "_layer.fgb")
+    path_layer = paste0(path_layer, "/", layerId, "_layer.fgb")
 
     file.copy(file, path_layer, overwrite = TRUE)
 
