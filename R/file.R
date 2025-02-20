@@ -437,7 +437,7 @@ addFgb = function(map,
       map$dependencies
       , fgbDependencies()
       , chromaJsDependencies()
-      , fileAttachment(path_layer, group)
+      , fileAttachment(path_layer, layerId)
     )
 
     if (!is.null(minZoom)) {
