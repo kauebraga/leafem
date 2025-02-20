@@ -418,6 +418,9 @@ addFgb = function(map,
     dir.create(path_layer)
     path_layer = paste0(path_layer, "/", layerId, "_layer.fgb")
 
+    print("path_layer")
+    print(path_layer)
+
     file.copy(file, path_layer, overwrite = TRUE)
 
     style_list = list(radius = radius,
