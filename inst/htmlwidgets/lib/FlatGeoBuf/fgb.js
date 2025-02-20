@@ -47,7 +47,7 @@ LeafletWidget.methods.addFlatGeoBuf = function (layerId,
     pane = options.pane;
   }
 
-  let data_fl = document.getElementById(group + '-1-attachment');
+  let data_fl = document.getElementById(layerId + '-1-attachment');
 
   if (data_fl === null) {
     data_fl = url;
@@ -332,7 +332,7 @@ LeafletWidget.methods.addFlatGeoBufFiltered = function (layerId,
     pane = options.pane;
   }
 
-  let data_fl = document.getElementById(group + '-1-attachment');
+  let data_fl = document.getElementById(layerId + '-1-attachment');
 
   if (data_fl === null) {
     data_fl = url;
@@ -365,23 +365,23 @@ LeafletWidget.methods.addFlatGeoBufFiltered = function (layerId,
 
   // Initialize previousResults/nextResults if not already initialized
   var previousResults = previousResults || {};
-  previousResults[group] = L.layerGroup();
-  map.layerManager.addLayer(previousResults[group], null, layerId, group);
+  previousResults[layerId] = L.layerGroup();
+  map.layerManager.addLayer(previousResults[layerId], null, layerId, group);
 
   // Async Update Function
   async function updateResults() {
 
     // remove the old results
-    map.layerManager.removeLayer(previousResults[group], layerId);
-    previousResults[group].remove()
+    map.layerManager.removeLayer(previousResults[layerId], layerId);
+    previousResults[layerId].remove()
 
     // add next results
     var nextResults = nextResults || {};
-    nextResults[group] = L.layerGroup();
-    map.layerManager.addLayer(nextResults[group], null, layerId, group);
+    nextResults[layerId] = L.layerGroup();
+    map.layerManager.addLayer(nextResults[layerId], null, layerId, group);
 
     // Replace previous with next
-    previousResults[group] = nextResults[group];
+    previousResults[layerId] = nextResults[layerId];
 
     // Use flatgeobuf JavaScript API to iterate features as geojson.
     // Because we specify a bounding box, flatgeobuf will only fetch the relevant subset of data,
