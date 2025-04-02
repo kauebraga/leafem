@@ -60,19 +60,19 @@ function getInfoLegend(layerId) {
   }
   return element;
 }
-function makeControl(layerId, options, map) {
-  info = L.control({
-    position: options.position ? options.position : "topright"
-  });
-  let ctrl_nm = "rasterValues-" + layerId;
-  info.onAdd = function(map) {
-    this._div = L.DomUtil.create('div', options.className + ' rastervals');
-    this._div.id = ctrl_nm;
-    this._div.innerHTML = "";
-    return this._div;
-  };
-  info.addTo(map);
-}
+// function makeControl(layerId, options, map) {
+//   info = L.control({
+//     position: options.position ? options.position : "topright"
+//   });
+//   let ctrl_nm = "rasterValues-" + layerId;
+//   info.onAdd = function(map) {
+//     this._div = L.DomUtil.create('div', options.className + ' rastervals');
+//     this._div.id = ctrl_nm;
+//     this._div.innerHTML = "";
+//     return this._div;
+//   };
+//   info.addTo(map);
+// }
 
 LeafletWidget.methods.addGeotiff = function (url,
                                              group,
